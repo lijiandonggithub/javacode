@@ -16,7 +16,6 @@ public class JsonResult<T> {
     /**
      * 返回数据
      */
-    //TODO  T和类中的<T>是什么意思
     private T data;
     /**
      * 返回数据数量

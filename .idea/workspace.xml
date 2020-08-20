@@ -3,8 +3,26 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac22d5d4-6933-4071-a0a2-afd58a56fc27" name="Default Changelist" comment="" />
+    <list default="true" id="ac22d5d4-6933-4071-a0a2-afd58a56fc27" name="Default Changelist" comment="springboot第一次提交">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/JsonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/JsonResult.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +35,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -31,6 +52,7 @@
     <option name="vmOptions" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true" />
   </component>
   <component name="ProjectId" id="1g5VcUNr5b5V0D7RKp2GGis2mRz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
@@ -111,12 +133,47 @@
       <workItem from="1597752473970" duration="67000" />
       <workItem from="1597754568792" duration="17417000" />
       <workItem from="1597839159544" duration="5938000" />
-      <workItem from="1597908945668" duration="635000" />
+      <workItem from="1597908945668" duration="3195000" />
     </task>
+    <task id="LOCAL-00001" summary="springboot第一次提交">
+      <created>1597909949931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597909949931</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="springboot第一次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="springboot第一次提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="267" y="19" key="#Inspections" timestamp="1597818945263">
@@ -149,10 +206,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1366.728@0.0.1280.680" timestamp="1597657189476" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1597830466637">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1597909666935">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1366.728@0.0.1280.680" timestamp="1597830466637" />
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1366.728@0.0.1280.680" timestamp="1597909666935" />
     <state x="2369" y="102" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1597819283194" />
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597752541532" />
     <state width="1237" height="184" key="GridCell.Tab.0.bottom" timestamp="1597901696529">
@@ -233,6 +290,10 @@
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1366.728@0.0.1280.680" timestamp="1597817838175" />
     <state x="58" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597752535924" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1597910894875">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1366.728@0.0.1280.680" timestamp="1597910894875" />
     <state x="28" y="1" key="new project wizard" timestamp="1597749333990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
