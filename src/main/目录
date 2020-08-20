@@ -1,0 +1,6 @@
+config：放置配置类
+controller：放置对外暴露接口的类
+dao：与数据库交互，                                   命名为mapper更加规范，看个人习惯
+model：主要用于实体（Entity）与数据访问层（Repository）
+service：主要是业务类代码
+utils：工具类

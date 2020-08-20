@@ -1,0 +1,7 @@
+com\example\demo\dao\GoodsDao.class
+com\example\demo\DemoApplication.class
+com\example\demo\service\GoodsService.class
+com\example\demo\model\GoodsContent.class
+com\example\demo\controller\JieKou.class
+com\example\demo\model\JsonResult.class
+com\example\demo\service\Impl\GoodsServiceImpl.class
