@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
 </head>
 <body>
-<ul class="layui-nav" lay-filter="index" style="height: 60px">
-    <li class="layui-nav-item"><a href="page/commodity_particulars.html" target="my-iframe">商品详情</a></li>
+<ul class="layui-nav" lay-filter="" style="height: 60px">
+    <li class="layui-nav-item"><a href="page/commodity_particulars.html" target="my-iframe" >商品详情</a></li>
     <li class="layui-nav-item layui-this"><a href="page/photo_code.html" target="my-iframe">短信查询</a></li>
-    <li class="layui-nav-item"><a target="my-iframe"  id="pagesize" onclick="pagesize();">显示页面尺寸</a></li><!-- href="javascript:void(0)" href跳转空连接-->
+    <li class="layui-nav-item"><a target="my-iframe"  id="pagesize" onclick="pagesize();" >显示页面尺寸</a></li><!-- href="javascript:void(0)" href跳转空连接-->
 <!--    <li class="layui-nav-item">-->
 <!--        <a href="javascript:;">解决方案</a>-->
 <!--        <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
@@ -35,13 +35,18 @@
         return true;
     }
     $(function(){
-        var headerH = 85;
+        var headerH = 75;
         var Left = 15;
         var right =20;
         h=$(window).height();
         w=$(window).width();
         $("#my-iframe").height((h-headerH)+"px");
         $("#my-iframe").width((w-Left-right)+"px");
+    });
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
     });
 
 </script>

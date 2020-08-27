@@ -9,6 +9,6 @@ public interface GoodsService {
 
     JsonResult selectData(int pageNum, int pageSize);
 
-
+    JsonResult getPthotoCode(int pageNum, int pageSize);
 
 }

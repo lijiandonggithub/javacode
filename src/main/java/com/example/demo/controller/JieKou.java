@@ -19,12 +19,15 @@ public class JieKou {
 //        @RequestParam("id")：获取请求参数(单个参数)
 //        @RequestBody
          return goodsService.selectData(pageNum,pageSize);
-
     }
-    @PostMapping(value = "/hahaha")
-    public JsonResult aaaa(
-            @RequestParam(required = false) String qqq){ //required=false qqq参数可传可不传，
-        return new JsonResult(qqq,"0",10);
+    @GetMapping(value = "/photocode")
+    public JsonResult photocode(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize){ //required=false qqq参数可传可不传，
+        return goodsService.getPthotoCode(pageNum,pageSize);
     }
+//    @PostMapping(value = "/photocode")
+//    public JsonResult photocode(
+//            @RequestParam(required = false) String qqq){ //required=false qqq参数可传可不传，
+//        return new JsonResult(qqq,"0",10);
+//    }
 
 }
