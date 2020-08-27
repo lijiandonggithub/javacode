@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+</head>
+<body>
+<table id="photocode_table" lay-filter="photo_code">
+</table>
+</body>
+<script src="../layui/layui.js"></script>
+<script src="../js/libs/jquery-2.1.1.min.js"></script>
+
+<script>
+    layui.use(['table', 'layer', 'form', 'laypage'], function () {
+        var table=layui.table,
+            form=layui.form,
+            element=layui.element
+
+        table.render({
+            table:"短信验证码",
+            elem:"#photocode_table",
+            id:"photocode_table_id",
+            url:"/goods/photocode",
+            request:{
+                pageName:"pageNum",
+                limitName:"pageSize"
+            },
+            page:true,
+            limit:10,
+            limits:[1,5,10,20,50,100],
+            cols:[[//table表头显示内容
+                {field: 'mobile', title: '账&emsp;号', width: '35%', align: 'center'}
+                , {field: 'keywords', title: '验证码' ,width: '25%',  align: 'center'}
+                , {field: 'send_time', title: '发送时间', width: '40%', align: 'center'}
+            ]]
+        })
+    })
+</script>
+</html>

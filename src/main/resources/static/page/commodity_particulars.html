@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+</head>
+<body>
+<table id="goods_table" lay-filter="good_bar">
+</table>
+</body>
+<script src="../layui/layui.js"></script>
+<script src="../js/libs/jquery-2.1.1.min.js"></script>
+<script type="text/html" id="goods_lineBar">
+    <a class="layui-btn layui-btn-xs layui-bg-green" lay-even="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs layui-bg-red" lay-even="del">删除</a>
+</script>
+<script>
+    layui.use(['table', 'layer', 'form', 'laypage'], function () {
+        var table=layui.table,
+            form=layui.form,
+            element=layui.element
+
+        table.render({
+            table:"商品表",
+            elem:"#goods_table",
+            id:"goods_table_id",
+            url:"/goods/select",
+            request:{
+                pageName:"pageNum",
+                limitName:"pageSize"
+            },
+            page:true,
+            limit:5,
+            limits:[1,5,10,20,50,100],
+            cols:[[//table表头显示内容
+                {field: 'id', title: '编号', width: 60, align: 'center'}
+                , {field: 'type', title: '类&emsp;型', width: '11%', align: 'center'}
+                , {field: 'name', title: '商品名称', width: '15%', align: 'center'}
+                , {field: 'price', title: '价&emsp;格', width: '13%', align: 'center'}
+                , {field: 'size', title: '数&emsp;量', width: '13%', align: 'center'}
+                , {field: 'status', title: '状&emsp;态', width: '13%', align: 'center'}
+                , {field: 'description', title: '说&emsp;明', align: 'center'}
+                , {
+                    fixed: 'right',//右固定，相当于冻结窗口
+                    title: '操作',
+                    toolbar: '#goods_lineBar',
+                    width: 160,
+                    align: 'center'
+                }
+            ]]
+        })
+    })
+</script>
+</html>

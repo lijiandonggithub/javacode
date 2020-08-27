@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+</head>
+<body>
+<ul class="layui-nav" lay-filter="index" style="height: 60px">
+    <li class="layui-nav-item"><a href="page/commodity_particulars.html" target="my-iframe">商品详情</a></li>
+    <li class="layui-nav-item layui-this"><a href="page/photo_code.html" target="my-iframe">短信查询</a></li>
+    <li class="layui-nav-item"><a target="my-iframe"  id="pagesize" onclick="pagesize();">显示页面尺寸</a></li><!-- href="javascript:void(0)" href跳转空连接-->
+<!--    <li class="layui-nav-item">-->
+<!--        <a href="javascript:;">解决方案</a>-->
+<!--        <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
+<!--            <dd><a href="">移动模块</a></dd>-->
+<!--        </dl>-->
+<!--    </li>-->
+<!--    <li class="layui-nav-item"><a href="">社区</a></li>-->
+</ul>
+<div style="height: max-content;width: max-content;margin:10px">
+<!--    <iframe name="my-iframe" id="my-iframe" src="page/commodity_particulars.html"></iframe>-->
+    <iframe id="my-iframe" name="my-iframe" frameborder="0" src="page/photo_code.html" scrolling="auto" style="width:100%;"></iframe>
+</div>
+</body>
+</head>
+<script src="layui/layui.js"></script>
+<script src="js/libs/jquery-2.1.1.min.js"></script>
+<script type="text/html" id="goods_lineBar">
+</script>
+<script type="text/javascript">
+    var h;
+    var w;
+    window.onerror=function(){
+        return true;
+    }
+    $(function(){
+        var headerH = 85;
+        var Left = 15;
+        var right =20;
+        h=$(window).height();
+        w=$(window).width();
+        $("#my-iframe").height((h-headerH)+"px");
+        $("#my-iframe").width((w-Left-right)+"px");
+    });
+
+</script>
+</html>
