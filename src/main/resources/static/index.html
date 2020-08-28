@@ -35,12 +35,12 @@
         return true;
     }
     $(function(){
-        var headerH = 75;
+        var headerH = 70;
         var Left = 15;
         var right =20;
         h=$(window).height();
         w=$(window).width();
-        $("#my-iframe").height((h-headerH)+"px");
+        $("#my-iframe").height((h-headerH-20)+"px");
         $("#my-iframe").width((w-Left-right)+"px");
     });
     layui.use('element', function(){

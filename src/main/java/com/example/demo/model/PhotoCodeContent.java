@@ -2,12 +2,12 @@ package com.example.demo.model;
 
 import javax.xml.crypto.Data;
 
-public class PhotoCode {
+public class PhotoCodeContent {
     private String mobile;
     private String send_time;
     private String keywords;
 
-    public PhotoCode(String mobile, String send_time, String keywords) {
+    public PhotoCodeContent(String mobile, String send_time, String keywords) {
         this.mobile = mobile;
         this.send_time = send_time;
         this.keywords = keywords;

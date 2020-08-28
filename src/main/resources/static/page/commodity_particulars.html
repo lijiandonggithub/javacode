@@ -31,7 +31,7 @@
                 limitName:"pageSize"
             },
             page:true,
-            limit:5,
+            limit:10,
             limits:[1,5,10,20,50,100],
             cols:[[//table表头显示内容
                 {field: 'id', title: '编号', width: 60, align: 'center'}
@@ -50,6 +50,13 @@
                 }
             ]]
         })
+        table.on('table(good_bar)', function(obj) {
+            var d = obj.data;
+            console.log(d);//可以打印出当前行的信息
+            if(obj.event === 'edit') {
+            //...
+            }
+        });
     })
 </script>
 </html>
