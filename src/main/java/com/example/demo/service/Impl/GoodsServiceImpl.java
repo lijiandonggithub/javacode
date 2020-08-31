@@ -30,6 +30,25 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    public JsonResult addgoodstData(String name, String type, float price, int size, String status, String description) {
+        PageInfo<GoodsContent> pageInfo = new PageInfo(goodsDao.addGoodsData());
+        return new JsonResult(pageInfo.getList(), "操作成功！", pageInfo.getTotal());
+
+    }
+    @Override
+    public JsonResult delgoodsData(int id) {
+        PageInfo<GoodsContent> pageInfo = new PageInfo(goodsDao.delGoodsData(id));
+        return new JsonResult(pageInfo.getList(), "操作成功！", pageInfo.getTotal());
+
+    }
+    @Override
+    public JsonResult updatagoodsData(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        PageInfo<GoodsContent> pageInfo = new PageInfo(goodsDao.updataGoodsData());
+        return new JsonResult(pageInfo.getList(), "操作成功！", pageInfo.getTotal());
+
+    }
+    @Override
     public JsonResult getPthotoCode(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         PageInfo<PhotoCodeContent> photoCodePageInfo = new PageInfo(photocode.getPhothCode());

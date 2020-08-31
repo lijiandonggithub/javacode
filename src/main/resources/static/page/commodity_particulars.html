@@ -11,9 +11,10 @@
 </body>
 <script src="../layui/layui.js"></script>
 <script src="../js/libs/jquery-2.1.1.min.js"></script>
+<script src="../js/libs/myfunction.js"></script>
 <script type="text/html" id="goods_lineBar">
-    <a class="layui-btn layui-btn-xs layui-bg-green" lay-even="edit">编辑</a>
-    <a class="layui-btn layui-btn-xs layui-bg-red" lay-even="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 </script>
 <script>
     layui.use(['table', 'layer', 'form', 'laypage'], function () {
@@ -25,11 +26,13 @@
             table:"商品表",
             elem:"#goods_table",
             id:"goods_table_id",
+            even: true,
             url:"/goods/select",
             request:{
                 pageName:"pageNum",
                 limitName:"pageSize"
             },
+            // toolbar: '#goods_headerBar',开启表头打印，导出按钮
             page:true,
             limit:10,
             limits:[1,5,10,20,50,100],
@@ -50,13 +53,13 @@
                 }
             ]]
         })
-        table.on('table(good_bar)', function(obj) {
-            var d = obj.data;
-            console.log(d);//可以打印出当前行的信息
-            if(obj.event === 'edit') {
-            //...
-            }
-        });
+        // table.on('table(good_bar)', function(obj) {
+        //     var d = obj.data;
+        //     console.log(d);//可以打印出当前行的信息
+        //     if(obj.event === 'edit') {
+        //     //...
+        //     }
+        // });
     })
 </script>
 </html>

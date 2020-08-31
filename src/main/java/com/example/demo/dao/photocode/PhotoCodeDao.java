@@ -10,6 +10,6 @@ import java.util.List;
 @Mapper
 public interface PhotoCodeDao {
 
-    @Select("SELECT mobile,keywords,send_time FROM `umc`.`sms_record_2020` WHERE `sms_type` = '0' ORDER BY id desc")
+    @Select("select base.id,record.mobile,record.keywords,record.send_time FROM `umc`.`sms_record_2020` record left join `umc`.`user_base_info` base on record.mobile = base.mobile where record.keywords!='' ORDER BY record.send_time desc")
     List<PhotoCodeContent> getPhothCode();
 }

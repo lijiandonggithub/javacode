@@ -3,14 +3,23 @@ package com.example.demo.model;
 import javax.xml.crypto.Data;
 
 public class PhotoCodeContent {
+    private Integer userid;
     private String mobile;
     private String send_time;
     private String keywords;
 
-    public PhotoCodeContent(String mobile, String send_time, String keywords) {
+    public PhotoCodeContent(Integer userid,String mobile, String send_time, String keywords) {
+        this.userid=userid;
         this.mobile = mobile;
         this.send_time = send_time;
         this.keywords = keywords;
+    }
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
     public String getMobile() {

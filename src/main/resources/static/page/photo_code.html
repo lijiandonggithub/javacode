@@ -13,7 +13,7 @@
 </body>
 <script src="../layui/layui.js"></script>
 <script src="../js/libs/jquery-2.1.1.min.js"></script>
-
+<script src="../js/libs/myfunction.js"></script>
 <script>
     layui.use(['table', 'layer', 'form', 'laypage'], function () {
         var table=layui.table,
@@ -33,9 +33,10 @@
             limit:10,
             limits:[1,5,10,20,50,100],
             cols:[[//table表头显示内容
-                {field: 'mobile', title: '账&emsp;号', width: '35%', align: 'center'}
-                , {field: 'keywords', title: '验证码' ,width: '25%',  align: 'center'}
-                , {field: 'send_time', title: '发送时间', width: '40%', align: 'center'}
+                {field: 'userid', title: '用户id', width: '20%', align: 'center'}
+                , {field: 'mobile', title: '账&emsp;号', width: '30%', align: 'center'}
+                , {field: 'keywords', title: '验证码' ,width: '20%',  align: 'center'}
+                , {field: 'send_time', title: '发送时间', width: '30%', align: 'center'}
             ]]
         })
     })

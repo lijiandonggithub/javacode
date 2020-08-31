@@ -9,6 +9,14 @@ public interface GoodsService {
 
     JsonResult selectData(int pageNum, int pageSize);
 
+
+    JsonResult addgoodstData(String name, String type, float price, int size, String status, String description);
+
+    JsonResult delgoodsData(int id);
+
+    JsonResult updatagoodsData(int pageNum, int pageSize);
+
+
     JsonResult getPthotoCode(int pageNum, int pageSize);
 
 }
