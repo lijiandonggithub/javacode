@@ -7,9 +7,9 @@
 </head>
 <body>
 <ul class="layui-nav" lay-filter="" style="height: 60px">
-    <li class="layui-nav-item"><a href="page/commodity_particulars.html" target="my-iframe" >商品详情</a></li>
-    <li class="layui-nav-item layui-this"><a href="page/photo_code.html" target="my-iframe">短信查询</a></li>
-    <li class="layui-nav-item"><a target="my-iframe"  id="pagesize" onclick="pagesize();" >显示页面尺寸</a></li><!-- href="javascript:void(0)" href跳转空连接-->
+    <li class="layui-nav-item "><a href="page/commodity_particulars.html" target="my-iframe" >商品详情</a></li>
+    <li class="layui-nav-item "><a href="page/photo_code.html" target="my-iframe">短信查询</a></li>
+    <li class="layui-nav-item layui-this "><a href="page/task_studentljd.html" target="my-iframe" >学生信息</a></li><!-- href="javascript:void(0)" href跳转空连接-->
 <!--    <li class="layui-nav-item">-->
 <!--        <a href="javascript:;">解决方案</a>-->
 <!--        <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
@@ -20,7 +20,7 @@
 </ul>
 <div style="height: max-content;width: max-content;margin:10px">
 <!--    <iframe name="my-iframe" id="my-iframe" src="page/commodity_particulars.html"></iframe>-->
-    <iframe id="my-iframe" name="my-iframe" frameborder="0" src="page/photo_code.html" scrolling="auto" style="width:100%;"></iframe>
+    <iframe id="my-iframe" name="my-iframe" frameborder="0" src="page/task_studentljd.html" scrolling="auto" style="width:100%;"></iframe>
 </div>
 </body>
 </head>
@@ -35,7 +35,7 @@
         return true;
     }
     $(function(){
-        var headerH = 70;
+        var headerH = 40;
         var Left = 15;
         var right =20;
         h=$(window).height();

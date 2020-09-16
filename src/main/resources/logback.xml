@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--日志配置-->
+<configuration scan="true">
+    <!--直接定义属性-->
+    <property name="logFile" value="logs/mutest"/>
+    <property name="maxFileSize" value="30MB"/>
+
+    <!--定义并描述一个日志的输出属性-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{50} -[%file:%line]- %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logFile}.log</file>
+        <encoder>
+            <pattern>%d [%thread] %-5level -[%file:%line]- %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logFile}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>${maxFileSize}</maxFileSize>
+        </rollingPolicy>
+    </appender>
+    <!--创建一个具体的日志输出-->
+    <logger name="com.example" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="fileLog"/>
+    </logger>
+
+    <!--基础的日志输出-->
+    <root level="info">
+<!--        <appender-ref ref=""/>-->
+    </root>
+</configuration>

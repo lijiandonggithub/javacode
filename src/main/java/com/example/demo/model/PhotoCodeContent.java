@@ -1,7 +1,8 @@
 package com.example.demo.model;
 
-import javax.xml.crypto.Data;
+import lombok.Data;
 
+@Data
 public class PhotoCodeContent {
     private Integer userid;
     private String mobile;

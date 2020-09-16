@@ -22,18 +22,16 @@ public class DataSourceConfig {
 
     @Bean(name = "goodsDataSource")
     @Qualifier("goodsDataSource")
+    @Primary
     @ConfigurationProperties(prefix = "spring.goods.datasource")
     public DataSource base() {
-
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = "photocodeDataSource")
     @Qualifier("photocodeDataSource")
-    @Primary
     @ConfigurationProperties(prefix = "spring.photocode.datasource")
     public DataSource future() {
-
         return DataSourceBuilder.create().build();
     }
 

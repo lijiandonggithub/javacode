@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * @modify
  */
 @Configuration
-@MapperScan(basePackages = "com.example.demo.dao.photocode", sqlSessionFactoryRef = "futureSqlSessionFactory")
+@MapperScan(basePackages = "com.example.demo.dao.ex", sqlSessionFactoryRef = "futureSqlSessionFactory")
 public class MybatisphotocodeConfig {
     @Autowired
     @Qualifier("photocodeDataSource")

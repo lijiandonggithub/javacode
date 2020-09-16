@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body>
+<table id="students_table" lay-filter="student_bar" lay-data="{id: 'idTest'}"></table>
+<div class="layui-row" id="open_div" style="display:none;">
+    <form id="add_form" class="layui-form" action="" style="margin-top: 20px;align:center;">
+        <!--隐藏字段action，用来区分增加和编辑行为-->
+        <input type="hidden" name="action" id="action">
+        <!--隐藏字段id，用于提供编辑需要的主键-->
+        <input type="hidden" name="id" id="id">
+        <!--隐藏字段request_type，用于提供请求方式:get,post,put-->
+        <input type="hidden" name="request_type" id="request_type">
+
+        <div class="layui-form-item" style="display: table;width: 96%">
+            <div class="layui-form-item" style="display: table-cell;width: 50%">
+                <label class="layui-form-label">姓&emsp;&emsp;名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" placeholder="请输入姓名"
+                           autocomplete="off" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+            <label class="layui-form-label">性&emsp;&emsp;别</label>
+            <div class="layui-input-block">
+                <select name="sex" lay-filter="status" lay-verify="required">
+                    <option value="">请选择</option>
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item" style="display: table;width: 96%">
+            <div class="layui-form-item" style="display: table-cell;width: 50%">
+                <label class="layui-form-label">年&emsp;&emsp;龄</label>
+                <div class="layui-input-block">
+                    <input type="text" name="age" placeholder="请输入年龄"
+                           autocomplete="off" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="display: table-cell;width: 50%">
+                <label class="layui-form-label">成&emsp;&emsp;绩</label>
+                <div class="layui-input-block">
+                    <input type="text" name="mark" placeholder="请输入数量"
+                           autocomplete="off" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" style="display: table;width: 96%">
+            <div class="layui-form-item" style="display: table-cell;width: 100%">
+                <label class="layui-form-label">地&emsp;&emsp;址</label>
+                <div class="layui-input-block">
+                    <input type="text" name="addr" placeholder="请输入地址"
+                           autocomplete="off" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item" align="center">
+            <div class="layui-btn-container" >
+                <button class="layui-btn layui-btn-radius" lay-submit="" lay-filter="update_submit">&ensp;提&ensp;交&ensp;</button>
+
+                <button type="reset" class="layui-btn layui-btn-primary layui-btn-radius" >&ensp;重&ensp;置&ensp;</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+</body>
+<script src="../layui/layui.js"></script>
+<script src="../js/libs/jquery-2.1.1.min.js"></script>
+<script src="../utils/common.js"></script>
+<script type="text/html" id="students_lineBar">
+    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="students_header_bar">
+    <div>
+        <button class="layui-btn layui-btn-sm" lay-event="add">
+            <i class="layui-icon">&#xe608;</i>新&emsp;增
+        </button>
+        <button class="layui-btn layui-btn-normal layui-btn-sm" lay-event="refresh" style=" margin-left: 15px">
+            <i class="layui-icon">&#xe669;</i> 刷&emsp;新
+        </button>
+    </div>
+</script>
+<script>
+    layui.use(['table', 'layer', 'form', 'laypage'], function () {
+        var table=layui.table,
+            form=layui.form,
+            element=layui.element
+
+        table.render({
+            table:"商品表",
+            elem:"#students_table",
+            id:"students_table_id",
+            even: true,
+            url:"/student/select",
+            request:{
+                pageName:"pageNum",
+                limitName:"pageSize"
+            },
+            toolbar: '#students_header_bar',
+            page:true,
+            limit:10,
+            title:'商品详情表',
+            limits:[1,5,10,20,50,100],
+            cols:[[//table表头显示内容
+                {field: 'id', title: '编号', width:'5%', align: 'center'}
+                , {field: 'name', title: '姓&emsp;名', width: '13%', align: 'center'}
+                , {field: 'age', title: '年龄', width: '17%', align: 'center'}
+                , {field: 'addr', title: '地&emsp;址', width: '20%', align: 'center'}
+                , {field: 'sex', title: '性&emsp;别', width: '10%', align: 'center'}
+                , {field: 'mark', title: '成&emsp;绩', width: '15%', align: 'center'}
+                , {
+                    fixed: 'right',//右固定，相当于冻结窗口
+                    title: '操作',
+                    toolbar: '#students_lineBar',
+                    width: '300px',
+                    align: 'center'
+                }
+            ]]
+        })
+        table.on('toolbar(student_bar)', function(obj) {
+
+            console.log(obj.data);//可以打印出当前行的信息
+            switch (obj.event){
+                case 'add':
+                    var data = {};
+                    data.action = 'addstudent';
+                    data.request_type = 'post';
+                    // 调用打开弹层的工具方法
+                    open_form("#open_div", data, '添加商品', '620px', '282px');
+                    break;
+
+                case 'refresh':
+                    // 执行一个表格重载即实现刷新功能
+                    table.reload('students_table_id', {
+                        where: '',
+                        contentType: 'application/x-www-form-urlencoded',
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        },
+                        url: '/student/select',
+                        method: 'get'
+                    });
+                    break;
+            }
+        });
+
+        table.on('tool(student_bar)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            var id = data.id;
+            console.log(obj);
+            switch (layEvent) {
+                case 'edit':
+                    // 根据编辑行为为form隐藏项赋值
+                    data.action = 'updatestudent';
+                    data.request_type = 'post';
+                    open_form("#open_div", data, '编辑用例', '620px', '282px');
+                    break;
+                case 'del':
+                    layer.confirm('真的删除该行么', function (index) {
+                        obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+                        //向服务端发送删除指令
+                        $.ajax({
+                            type: "get",  //数据提交方式(post/get)
+                            url: "/student/delstudent?id=" + id,  //提交到的url
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",//返回的数据类型格式
+                            success: function (result) {
+                                layer.msg(result.msg, {icon: 1, time: 1000});
+                                table.reload('students_table_id', {
+                                    where: '',
+                                    contentType: 'application/x-www-form-urlencoded',
+                                    page: {
+                                        curr: 1 //重新从第 1 页开始
+                                    },
+                                    url: '/student/select',
+                                    method: 'get'
+                                });
+                            }, error: function (e) {
+                                console.log(e, 'error');
+                                layer.msg("查询商品异常，请联系管理员！", {icon: 1, time: 1000});
+                            }
+                        });
+                        layer.close(index);
+                    });
+                   break;
+            }
+        });
+        form.on('submit(update_submit)', function (data) {
+            var uri = data.field.action;
+            var type = data.field.request_type;
+            $.ajax({
+                type: type,
+                url: '/student/' + uri,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data.field),
+                dataType: "json",
+                success: function (result) {
+                    if (result.code == "0") {
+                        table.reload('students_table_id', {
+                            contentType: 'application/x-www-form-urlencoded',
+                            page: {
+                                curr: 1 //重新从第 1 页开始
+                            },
+                            url: '/student/select',
+                            method: 'get'
+                        });
+                        layer.msg('修改成功', {icon: 1, time: 1000});
+                    } else {  //失败
+                        layer.alert(result.msg, {icon: 2}, function () {
+                            layer.close(index);
+                        });
+                    }
+                }
+            });
+            layer.close(index);//关闭弹出层
+            return false;
+        });
+    })
+</script>
+</html>

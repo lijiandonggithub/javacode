@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * @modify
  */
 @Configuration
-@MapperScan(basePackages = "com.example.demo.dao.goods", sqlSessionFactoryRef = "baseSqlSessionFactory")
+@MapperScan(basePackages = "com.example.demo.dao.test", sqlSessionFactoryRef = "baseSqlSessionFactory")
 public class MybatisgoodsConfig {
     @Autowired
     @Qualifier("goodsDataSource")

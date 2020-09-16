@@ -1,12 +1,6 @@
 server:
   port: 8086
 spring:
-#  datasource:
-#    driver-class-name: com.mysql.jdbc.Driver
-##    url: jdbc:mysql://192.168.112.31?useUnicode=true&characterEncoding=utf-8
-##    url: jdbc:mysql://192.168.112.31/58test?useUnicode=true&characterEncoding=utf-8
-##    username: r_58swap
-##    password: oxit745vkeWcAAy9
   goods:
     datasource:
       type: com.alibaba.druid.pool.DruidDataSource
@@ -21,3 +15,5 @@ spring:
       jdbc-url: jdbc:mysql://192.168.112.36?useUnicode=true&characterEncoding=utf-8
       username: root
       password: 58test
+logging:
+  config: classpath:logback.xml
